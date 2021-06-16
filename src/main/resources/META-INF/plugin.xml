@@ -1,20 +1,20 @@
 <idea-plugin>
-    <id>org.jetbrains.plugins.template</id>
-    <name>Template</name>
-    <vendor>JetBrains</vendor>
+    <id>com.github.katalune.abcfilesystem</id>
+    <name>AbcFileSystem</name>
+    <vendor>katalune</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="org.jetbrains.plugins.template.services.MyApplicationService"/>
-        <projectService serviceImplementation="org.jetbrains.plugins.template.services.MyProjectService"/>
-        <virtualFileSystem key="abc" implementationClass="org.jetbrains.plugins.template.AbcFileSystem"/>
+        <applicationService serviceImplementation="com.github.katalune.abcfilesystem.services.MyApplicationService"/>
+        <projectService serviceImplementation="com.github.katalune.abcfilesystem.services.MyProjectService"/>
+        <virtualFileSystem key="abc" implementationClass="com.github.katalune.abcfilesystem.AbcFileSystem"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="org.jetbrains.plugins.template.listeners.MyProjectManagerListener"
+        <listener class="com.github.katalune.abcfilesystem.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 </idea-plugin>

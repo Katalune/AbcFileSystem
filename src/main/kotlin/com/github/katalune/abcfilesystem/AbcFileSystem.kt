@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.template
+package com.github.katalune.abcfilesystem
 
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.openapi.vfs.impl.ArchiveHandler
