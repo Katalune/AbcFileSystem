@@ -10,7 +10,10 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.katalune.abcfilesystem.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.katalune.abcfilesystem.services.MyProjectService"/>
-        <virtualFileSystem key="abc" implementationClass="com.github.katalune.abcfilesystem.AbcFileSystem"/>
+        <virtualFileSystem key="abc" implementationClass="com.github.katalune.abcfilesystem.AbcFileSystem" physical="true"/>
+        <fileType name="ABC" implementationClass="com.github.katalune.abcfilesystem.AbcFileType" fieldName="INSTANCE"
+            extensions="abc"/>
+        <fileTypeOverrider implementation="com.github.katalune.abcfilesystem.AbcFileTypeOverrider"/>
     </extensions>
 
     <applicationListeners>
