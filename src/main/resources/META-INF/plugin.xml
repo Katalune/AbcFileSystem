@@ -20,4 +20,10 @@
         <listener class="com.github.katalune.abcfilesystem.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+    <actions>
+        <action id="com.github.katalune.abcfilesystem.TestAction"
+            class="com.github.katalune.abcfilesystem.TestAction" text="Find Archive">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>
