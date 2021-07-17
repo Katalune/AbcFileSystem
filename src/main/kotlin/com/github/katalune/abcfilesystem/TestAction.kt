@@ -8,8 +8,16 @@ import com.intellij.psi.PsiManager
 
 class TestAction: AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
-        // TODO: IndexableSetContributor
-        // roots contain jar:///Users/kata/IdeaProjects/AbcFileSystem/.jar!/schemas
+        /*
+        * Example of existing File System: https://github.com/intellij-rust/intellij-rust/blob/master/src/main/resources/META-INF/rust-core.xml
+        * <indexedRootsProvider implementation="org.rust.lang.core.macros.RsIndexableSetContributor"/>
+        * <virtualFileSystem key="rust_macros" implementationClass="org.rust.lang.core.macros.MacroExpansionFileSystem"/>
+        * <fileTypeOverrider implementation="org.rust.lang.core.macros.RsFileTypeOverriderForMacroExpansionFileSystem"/>
+        <globalIndexFilter implementation="org.rust.lang.core.macros.RsGlobalIndexFilterForMacroExpansionFileSystem"/>
+        <filetype.prebuiltStubsProvider filetype="Rust"
+                                        implementationClass="org.rust.lang.core.macros.MacroExpansionStubsProvider"/>
+        */
+        // indexable roots contain jar:///Users/kata/IdeaProjects/AbcFileSystem/.jar!/schemas
         printFile("abc://" + e.project?.basePath + "/app/libs/arc.abc" + "!/Some.kt", e.project!!)
     }
 
