@@ -21,13 +21,15 @@ class TestAction: AnAction() {
         // ArhiveFileSystem#getRootByLocal file:///Users/kata/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/fa4726cf6dd7f7a148c9fb0b13e46bb5/jars/classes.jar
         // indexable roots contain jar:///Users/kata/IdeaProjects/AbcFileSystem/.jar!/schemas
         printFile("abc://" + e.project?.basePath + "/app/libs/arc5.abc" + "!/Some5.kt", e.project!!)
+        printFile("aar://" + e.project?.basePath + "/app/libs/arc1.abc" + "!/Some1.kt", e.project!!)
+        printFile("jar://" + e.project?.basePath + "/app/libs/arc2.abc" + "!/Some2.kt", e.project!!)
     }
 
     private fun printFile(url: String, project: Project) {
         val vf = VirtualFileManager.getInstance().findFileByUrl(url)
         println(vf)
         println(vf?.fileSystem)
-        val psiFile = PsiManager.getInstance(project).findFile(vf!!)
+        val psiFile = vf?.let { PsiManager.getInstance(project).findFile(it) }
         println(psiFile)
         println(psiFile?.text)
     }
